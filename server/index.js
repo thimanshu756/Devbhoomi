@@ -1,6 +1,7 @@
 /*📌Express ko bula le bhai  */
 const express = require("express")
 const {readdirSync} = require("fs");
+const bodyParser = require('body-parser');
 /*📌Express ko call kr le fir kisi ek variable mein  */
 const app = express();
 
@@ -8,11 +9,15 @@ const app = express();
 /*📌ENV files ko chupa le bro */
 const dotenv = require("dotenv");
 const { connectDb } = require("./connection");
+const cors = require("cors")
 dotenv.config();
 const PORT =    process.env.port || 5000;
 
 connectDb();
 
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.json());
 /*📌import the router  */
 readdirSync("./routes").map((route)=>{
     app.use("/api", require(`./routes/${route}`))

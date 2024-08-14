@@ -1,14 +1,13 @@
-/*📌 yeah hai aam jindagi : */
-// const express = require("express");
+// Ye hai aam zindagi
+// const express = require("express")
+// const router = express.Router()
 
 const { login, signup } = require("../controllers/authController");
 
-// const router = express.Router();
-// const app = express();
-
-/*Yeah hai mentos jeendagi  */
+// Ye hai mentos zindagi
 const router = require("express").Router();
-router.post("/login", login);
+
 router.post("/signup", signup);
+router.post("/login", login);
 
 module.exports = router;
