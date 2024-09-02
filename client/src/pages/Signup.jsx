@@ -38,7 +38,7 @@ const Signup = () => {
   return (
     <div className="mt-20 sm:mt-10 min-h-screen flex items-center justify-center w-full ">
       <div className="bg-white shadow-md rounded-3xl px-5 py-6 w-full sm:w-[27vw]">
-        <h1 className="text-2xl font-bold text-center mb-4">Let's Connect!</h1>
+        <h1 className="text-2xl font-bold text-center mb-4">Your New Beginning Starts Here! 🍃</h1>
         <form onSubmit={handleSignup}>
           {/* For username */}
           <div className="mb-4">
@@ -55,7 +55,7 @@ const Signup = () => {
               required
               onChange={(e) => setUsername(e.target.value)}
               value={username}
-              placeholder="coder29"
+              placeholder="Anshuman"
               className="shadow-md rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-black focus:border-black"
             />
           </div>

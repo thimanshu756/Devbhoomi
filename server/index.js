@@ -15,7 +15,10 @@ const PORT =    process.env.port || 5000;
 
 connectDb();
 
-app.use(cors());
+app.use(cors({
+    origin: process.env.CLIENT_URL,
+    credentials :true,
+}));
 app.use(bodyParser.json());
 app.use(express.json());
 /*📌import the router  */

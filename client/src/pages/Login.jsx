@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <div className="mt-20 sm:mt-10 min-h-screen flex items-center justify-center w-full ">
       <div className="bg-white shadow-md rounded-3xl px-5 py-6 w-full sm:w-[27vw]">
-        <h1 className="text-2xl font-bold text-center mb-4">Let's Connect!</h1>
+        <h1 className="text-2xl font-bold text-center mb-4">Welcome Back Sherrr! 😎</h1>  
         <form onSubmit={handleLogin}>
           {/* For email */}
           <div className="mb-4">
@@ -89,7 +89,7 @@ const Login = () => {
             type="submit"
             className="w-full py-2 px-4 rounded-md shadow-md text-sm font-medium text-white bg-black "
           >
-            Signup
+            Login
           </button>
         </form>
       </div>

@@ -7,29 +7,46 @@ import SellerDashboard from '../pages/SellerDashboard'
 import BuyerDashboard from '../pages/BuyerDashboard'
 import gsap from "gsap";
 import { Toaster } from "react-hot-toast";
+import ProtectedRoute from './ProtectedRoute'
 
 const GsapTransition = () => {
-    const nodeRef = useRef(null);
-    const location = useLocation();
+  const nodeRef = useRef(null);
+  const location = useLocation();
+  console.log("The location is : ", location);
 
-    //📌laga deta hu bro taki mam animation se impress ho jaye
-    useEffect(()=>{
-        if(nodeRef.current){
-            gsap.fromTo(nodeRef.current, {opacity:0}, {opacity:1, duration:2}); 
-        }
-    },[location])
+  
+  useEffect(() => {
+    if (nodeRef.current) {
+      gsap.fromTo(nodeRef.current, { opacity: 0 }, { opacity: 1, duration: 1 });
+    }
+  }, [location]);
+
   return (
     <div ref={nodeRef}>
-        <Toaster />
-         <Routes location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/seller/profile" element={<SellerDashboard />} />
-          <Route path="/buyer/profile" element={<BuyerDashboard />} />
-        </Routes>
+      <Toaster />
+      <Routes location={location}>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/login"
+          element={<ProtectedRoute children={<Login />} requiresAuth={false} />}
+        />
+        <Route
+          path="/signup"
+          element={
+            <ProtectedRoute children={<Signup />} requiresAuth={false} />
+          }
+        />
+        <Route
+          path="/seller/profile"
+          element={<ProtectedRoute children={<SellerDashboard />} />}
+        />
+        <Route
+          path="/buyer/profile"
+          element={<ProtectedRoute children={<BuyerDashboard />} />}
+        />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default GsapTransition
+export default GsapTransition;

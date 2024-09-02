@@ -6,7 +6,6 @@ const Home = () => {
     <div className="mt-36">  
         <HeroSection />
         <PhotoGallery />
-        <div>Home</div>
         
     </div>
   )
