@@ -55,7 +55,7 @@ const Signup = () => {
               required
               onChange={(e) => setUsername(e.target.value)}
               value={username}
-              placeholder="Anshuman"
+              placeholder="name"
               className="shadow-md rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-black focus:border-black"
             />
           </div>
@@ -110,8 +110,8 @@ const Signup = () => {
               onChange={(e) => setAccountType(e.target.value)}
               className="shadow-md rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-black focus:border-black"
             >
-              <option value="buyer">Buyer</option>
-              <option value="seller">Seller</option>
+              <option value="buyer">Traveller</option>
+              <option value="seller">Guide</option>
             </select>
           </div>
 

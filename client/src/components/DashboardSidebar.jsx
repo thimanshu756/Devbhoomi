@@ -55,7 +55,7 @@ const DashboardSidebar = () => {
               }`}
               onClick={() => dispatch(setTab("photos-management"))}
             >
-              <IoMdPhotos /> Photos Management
+              <IoMdPhotos /> Tours Management
             </li>
           ) : (
             <li
@@ -64,7 +64,7 @@ const DashboardSidebar = () => {
               }`}
               onClick={() => dispatch(setTab("photos-purchased"))}
             >
-              <IoMdPhotos /> Photos Purchased
+              <IoMdPhotos /> Tours Purchased
             </li>
           )}
 
@@ -76,7 +76,14 @@ const DashboardSidebar = () => {
           >
             <SiGoogleanalytics /> Analytics
           </li>
-
+   <li
+            className={`w-full rounded-lg px-2 hover:bg-black hover:text-white cursor-pointer transition-all ease-linear duration-300 hover:scale-105 flex gap-2 justify-start items-center ${
+              tab == "rating" && "bg-black text-white"
+            }`}
+            onClick={() => dispatch(setTab("rating"))}
+          >
+            <SiGoogleanalytics /> Rating
+          </li>
           <li
             className={`w-full rounded-lg px-2 hover:bg-black hover:text-white cursor-pointer transition-all ease-linear duration-300 hover:scale-105 flex gap-2 justify-start items-center ${
               tab === "orders" && "bg-black text-white"
@@ -114,7 +121,7 @@ const DashboardSidebar = () => {
         className="w-full rounded-lg px-2 hover:bg-black hover:text-white cursor-pointer transition-all ease-linear duration-300 hover:scale-105 flex gap-2 justify-start items-center"
         onClick={() => dispatch(logout())}
       >
-        <IoMdLogOut /> Logout 
+        <IoMdLogOut /> Logout
       </li>
     </nav>
   );

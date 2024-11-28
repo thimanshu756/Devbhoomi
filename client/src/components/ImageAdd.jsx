@@ -124,7 +124,7 @@ const ImageAdd = () => {
             id="price"
             required
             className="rounded-lg border outline-none px-3 py-1 mt-1"
-            placeholder="45"
+            placeholder="45/person"
           />
         </div>
         <button

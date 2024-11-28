@@ -11,7 +11,7 @@ const dotenv = require("dotenv");
 const { connectDb } = require("./connection");
 const cors = require("cors")
 dotenv.config();
-const PORT =    process.env.port || 5000;
+const PORT =    process.env.port || 8000;
 
 connectDb();
 
@@ -30,7 +30,7 @@ readdirSync("./routes").map((route)=>{
 
 
 /*📌Port Define krr lo taki ki kaha chalana hai hme code ko*/
-const port = 5000;
+const port = 8000;
 
 
 /*📌Making Routes :  */

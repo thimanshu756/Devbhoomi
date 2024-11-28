@@ -5,6 +5,7 @@ import Analytics from "../components/Analytics";
 import Orders from "../components/Orders";
 import { useSelector } from "react-redux";
 import PhotosPurchased from "../components/buyer/PhotosPurchased";
+import CreateRating from "../components/buyer/createRating"
 
 const BuyerDashboard = () => {
   const tab = useSelector((state) => state.nav.tab);
@@ -20,7 +21,8 @@ const BuyerDashboard = () => {
               return <Analytics />;
             case "orders":
               return <Orders />;
-
+            case "rating":
+              return <CreateRating/>
             default:
               return <Analytics />;
           }

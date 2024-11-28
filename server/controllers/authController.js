@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { generateAccessToken } = require("../helpers/accessToken");
 const { generateRefreshToken } = require("../helpers/refreshToken");
+const mailSender = require("../utils/mailsender")
+const newUserLoginTemplate = require("../templates/loginTemplate")
 
 const signup = async (req, res) => {
   const { username, email, password, accountType } = req.body;
@@ -53,7 +55,11 @@ const login = async (req, res) => {
 
     const accessToken = generateAccessToken(data);
     const refreshToken = generateRefreshToken(data);
-
+await mailSender(
+  email,
+  `New User Logged In`,
+  newUserLoginTemplate({ username: user.username, email: user.email })
+);
     return res.status(200).json({
       success: true,
       message: "Login successful",
